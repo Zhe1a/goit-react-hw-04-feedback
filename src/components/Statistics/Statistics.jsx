@@ -8,8 +8,8 @@ function Statistics(props) {
           <li className={s["Statistics__item"]}>Good <p>{good}</p></li>
           <li className={s["Statistics__item"]}>Neutral <p>{neutral}</p></li>
           <li className={s["Statistics__item"]}>Bad <p>{bad}</p></li>
-          <li className={s["Statistics__item"]}>Total<p>{total}</p></li>
-          <li className={s["Statistics__item"]}>Positive feedback<p>{positivePercentage} %</p></li>
+          <li className={s["Statistics__item"]}>Total<p>{total()}</p></li>
+          <li className={s["Statistics__item"]}>Positive feedback<p>{positivePercentage()} %</p></li>
         </ul>
       </div>
     );
@@ -18,9 +18,7 @@ function Statistics(props) {
     good: PropTypes.number,
     neutral: PropTypes.number,
     bad: PropTypes.number,
-    total: PropTypes.number.isRequired,
-    positivePercentage: PropTypes.number.isRequired,
+    total: PropTypes.func.isRequired,
+    positivePercentage: PropTypes.func.isRequired,
   }
   export default Statistics;
-
- 
